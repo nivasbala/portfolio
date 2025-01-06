@@ -1,0 +1,99 @@
+# Services
+
+services:
+  # Rag Application
+  dd-llm-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true  # Run Streamlit in headless mode
+      - STREAMLIT_SERVER_PORT=8501     # Set the port
+      - DD_LLMOBS_ML_APP=dd-llm-app
+      - DD_SOURCE=python
+      - DD_ENV=dd-llm
+      - DD_SERVICE=dd-llm-app
+      - DD_VERSION=1.0
+      - DD_AGENT_HOST=agent
+      - DD_LOGS_INJECTION=true
+      - DD_TRACE_SAMPLE_RATE=1
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "python", "service": "dd-llm-app"}]'
+      com.datadoghq.tags.env: "dd-llm"
+      com.datadoghq.tags.service: "dd-llm-app"
+      com.datadoghq.tags.version: "1.0"
+      com.datadoghq.tags.team: "llm-team"
+    volumes:
+      - .:/app
+    ports:
+      - 8501:8501/tcp # Streamlit App Port
+  # Datadog Agent
+  agent:
+    image: gcr.io/datadoghq/agent:7.56.0
+    container_name: agent
+    pid: host
+    environment:
+      # Datadog SaaS Basic Info - From Environment Variables
+      - DD_API_KEY
+      - DD_SITE
+      # Datadog env tag used by USM
+      - DD_ENV=dd-llm
+      # Host Name of the Agent container
+      - DD_HOSTNAME=agent
+      # APM
+      - DD_APM_ENABLED=true # APM Enabled
+      - DD_APM_NON_LOCAL_TRAFFIC=true # Container APM Traces Enabled
+      - DD_APM_RECEIVER_PORT=8126
+      - DD_LOGS_INJECTION=true # Trace Injection Enabled
+      - DD_APM_RECEIVER_SOCKET=/var/run/datadog/apm.socket
+      # Logs
+      - DD_LOGS_ENABLED=true # Logs Enabled
+      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
+      # Live Process
+      - DD_PROCESS_AGENT_ENABLED=true # Enable Process Agent
+      - DD_PROCESS_CONFIG_PROCESS_COLLECTION_ENABLED=true # Enable Process Collection in Docker
+      # Profiling
+      - DD_PROFILING_ENABLED=true
+      # App Security
+      - DD_APPSEC_ENABLED=true
+      - DD_APPSEC_SCA_ENABLED=true
+      - DD_IAST_ENABLED=true
+      # USM Configuration
+      - DD_SYSTEM_PROBE_SERVICE_MONITORING_ENABLED='true' # USM
+      # DogStatsd
+      - DD_DOGSTATSD_SOCKET=/var/run/datadog/dsd.socket
+      # Tags
+      - DD_DOCKER_LABELS_AS_TAGS=true
+    labels:
+      com.datadoghq.ad.logs: '[{"source": "agent", "service": "agent"}]'
+    ports:
+      - 127.0.0.1:8126:8126/tcp
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
+      - /sys/kernel/debug:/sys/kernel/debug
+      - /lib/modules:/lib/modules
+      - /usr/src:/usr/src
+      - /var/tmp/datadog-agent/system-probe/build:/var/tmp/datadog-agent/system-probe/build
+      - /var/tmp/datadog-agent/system-probe/kernel-headers:/var/tmp/datadog-agent/system-probe/kernel-headers
+      - /etc/apt:/host/etc/apt
+      - /etc/yum.repos.d:/host/etc/yum.repos.d
+      - /etc/zypp:/host/etc/zypp
+      - /etc/pki:/host/etc/pki
+      - /etc/yum/vars:/host/etc/yum/vars
+      - /etc/dnf/vars:/host/etc/dnf/vars
+      - /etc/rhsm:/host/etc/rhsm
+      - /etc/passwd:/etc/passwd:ro
+      - /var/run/datadog/:/var/run/datadog
+    cap_add:
+      - SYS_ADMIN
+      - SYS_RESOURCE
+      - SYS_PTRACE
+      - NET_ADMIN
+      - NET_BROADCAST
+      - NET_RAW
+      - IPC_LOCK
+      - CHOWN
+    security_opt:
+      - apparmor:unconfined

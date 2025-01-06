@@ -1,0 +1,16 @@
+langchain
+langchain_community
+langchain_openai
+langchain_core
+python-dotenv
+streamlit
+langchain_experimental
+sentence-transformers
+langchain_chroma
+langchainhub
+unstructured
+pinecone-client
+python-dotenv
+datadog
+ddtrace
+python-json-logger
