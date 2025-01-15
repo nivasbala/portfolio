@@ -2,32 +2,34 @@
 
 ## Introduction
 
-Product Management Lifecycle unlike Software Development Lifecycle (SDLC) is more of an art than science where adaptability is the key to success. When building a products the stages in the product management lifecyle will vary by company, staff, maturity, product type, business model etc.,
+In this evolving world of AI specifically GenAI executing projects successfully will become easier. If one can identifying customer problems and providing solutions to those problems will be key for businesses. Product Management is going to play a key role in this exciting transformational time. Understanding how Product Management lifecycle works is going to be very important.
+
+Product Management Lifecycle unlike Software Development Lifecycle (SDLC) is more of an art than science where adaptability is the key to success. When building a products the stages in the product management lifecyle will vary by product type, stage of company, staff, maturity, product type, business model etc.,
 
 As a product manager, it is very important to understand the current situation of the company and various factors when coming up with a product management lifecycle that fits your company, product and market (customer problem).
 
-This blog attempts to organize around what a typical product management lifecycle would look like from a Product Manager's perspective. While some of the stages illustrated are essential and cannot be skipped, there will be a lot of variability to what is illustrated here. This blog will hopefully provide a guideline when you start your journey of building products that solve customer problems.
+This blog attempts to organize thoughts around what a typical product management lifecycle would look like from a Product Manager's perspective. While some of the stages illustrated are essential and cannot be skipped, there will be a lot of variability *(hence it is an art)* to what is illustrated here. This blog will hopefully provide guidelines when you start your journey of building products that solve customer problems.
 
 ---
 
-## 1. What is Product Management?
+## 1. What is Product Management and a Product Managers Role?
 
-If ask chatgpt or google the old fashioned way you will get various definitions. Here is a simple one, **"Product Management is the process of building product(s) that solve customer problem(s) and make money for the company"**. There are various stages involved in building building and launching a product, like ideation, development, go to market etc.,
+If you ask chatgpt or google (the old fashioned way) you will get various definitions. Here is a simple one, **"Product Management is the process of building product(s) that solve customer problem(s) and make money for the company"**. There are various stages involved in building building and launching a product, ideation, market analysis, development, go to market etc.,
 
 Product Managers play a crucial part in orchestrating this product lifecycle. Of course nothing can be achieved without the talented engineers and designers, sales, marketing, customer support and all the other functions involved.
 
 There are various skills needed by a product manager such as understanding the problem correctly, understadning the market, defining the scope (prioritzing), communication, strategic thinking, creative problem-solving etc., (I will write about this later)
 
-One Key skill to understand the context of the compnay and coming up with the product management lifecycle. In smaller companies and startups this process is not clearly defined and it evolves. Having this defined would be immensly helpful. This is what you will find in this blog.
+One Key skill to understand **"the context"** of the organization and come up with the product management lifecycle. In established and mature product companies this would be defined clearly. In smaller companies and startups this process may not clearly defined because the Founder(s) may be the Product Managers and it will evolves over time. Having this defined would be immensly helpful. This is what you will find in this blog.
 
 ---
 
 ## 2. The Stages of the Product Management Lifecycle
 
 The Stages are
-- 1. Define Company's Mission and Vision
-- 2. Identify Customer Problem - Get Customer Insights
-- 3. Do Financial Analysis (TAM, SAM, SOM)
+- 1. Define Company's Vision & Mission
+- 2. Identify Customer Problem (Get Customer Insights)
+- 3. Do Financial Analysis (TAM, SAM, SOM) and Business Case Analysis
 - 4. Define Business Model
 - 5. Strategic Product Planning (Optional)
 - 6. Product Opportunity Analysis
@@ -38,7 +40,19 @@ The Stages are
 
 The Fishbone timeline map illustrates this process. Lets dive into the stages
 
-### 2.1 Define Mission and Vision
+### 2.1 Define Vision and Mission
+
+This is the Grand Idea of the company a statement of what the company is about and what it is solving. This could be referred to as the "soul of the company". 
+
+As a Legend of Zelda fan/player, I looked up [Nintendo Mission](https://www.nintendo.com/us/about/) according to their website is **"put smiles on the faces of everyone we touch"** this would say is their vision, and the Mission is how they set out to acheive this.
+
+This need to be defined clearly if possible. At startups this might be in the minds of the founder(s) and may not be articulated. It's good to spend sometime to comeup with this.
+
+### 2.2 Customer Need/Problem (Customer Insight)
+
+Any business created is trying to solve a customer need, problem, painpoint or gap that has not been solved yet. Identifying the (correct) problem, making sure the solution is something customers would be willing to pay money for is at the core of Product Management.
+
+The source of ideas can come from various sources, a few of them
 
 ### A. Idea Generation and Discovery
 - Identifying customer needs or market gaps.
