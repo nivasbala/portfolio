@@ -1,8 +1,8 @@
 # Srini Bala's portfolio
 
-LinkedIn Profile - https://www.linkedin.com/in/srini-bala/
+[LinkedIn Profile](https://www.linkedin.com/in/srini-bala/)
 
-Portfolio - https://portfolio.srini-bala.dev/
+[Portfolio](https://portfolio.srini-bala.dev/)
 
-Maturity Assessemnt Github - https://github.com/nivasbala/maturity-assessment
+[Maturity Assessment Github](https://github.com/nivasbala/maturity-assessment)
 
